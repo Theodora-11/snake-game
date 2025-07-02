@@ -255,4 +255,16 @@ function reset() {
   gameBoard.appendChild(newText);
 }
 
+function gameOver() {
+  gameBoard.style.cssText = 'outline: 30px ridge rgba(10, 193, 10, 0.686)';
+  heightScore();
+  snake = [{x: 10, y: 10}];
+  food = generateFood();
+  score.innerHTML = '000';
+  snakeSpeed = 200;
+  direction = 'right';
+  lastDirection = 'right';
+  document.addEventListener('keydown', startGame);
+  reset();
+}
 
