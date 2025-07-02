@@ -231,3 +231,28 @@ function presArrowKey(event) {
       break;
   }
 }
+
+
+document.addEventListener('keyup', presArrowKey);
+
+function reset() {
+  gameStart = false;
+  gameBoard.innerHTML = "";
+  let newLogo = document.createElement('img');
+  newLogo.classList.add('logo');
+  newLogo.setAttribute('src', 'snake.png');
+
+  let newText = document.createElement('h1');
+  newText.classList.add('new-text');
+  newText.innerHTML = 'You lost the game!';
+
+  let textPressSpace = document.createElement('h1');
+  textPressSpace.classList.add('press-text');
+  textPressSpace.innerHTML = 'Press spacebar to start the game!';
+
+  gameBoard.appendChild(textPressSpace);
+  gameBoard.appendChild(newLogo);
+  gameBoard.appendChild(newText);
+}
+
+
