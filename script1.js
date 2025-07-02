@@ -205,3 +205,29 @@ function heightScore() {
   } 
 }
 
+let lastDirection = 'right';
+function presArrowKey(event) {
+  
+  switch(event.code) {
+    case 'ArrowUp':
+      if(lastDirection === 'down') break;
+      direction = 'up';
+      lastDirection = direction;
+      break;
+    case 'ArrowRight':
+      if(lastDirection === 'left') break;
+      direction = 'right';
+      lastDirection = direction;
+      break;
+    case 'ArrowDown':
+      if(lastDirection === 'up') break;
+      direction = 'down';
+      lastDirection = direction;
+      break;
+    case 'ArrowLeft':
+      if(lastDirection === 'right') break;
+      direction = 'left';
+      lastDirection = direction;
+      break;
+  }
+}
